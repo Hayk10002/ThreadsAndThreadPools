@@ -347,6 +347,8 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    std::cout << "Using concurrency type: " << config.concurrency_type << std::endl;
+
     std::vector<int> vec(config.vec_size.min);
     std::generate(vec.begin(), vec.end(), []() { return generateRandomNumber(); });
     for (int vec_size = config.vec_size.min; vec_size < config.vec_size.max; vec_size += config.vec_size.step)
